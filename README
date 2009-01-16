@@ -1,0 +1,26 @@
+= Tinymce Filter =
+
+This extension provides a TinyMCE filter for the Radiant CMS. 
+It allows you to edit the content of your pages in the TinyMCE editor.
+
+Ispired by http://code.google.com/p/radiant-tinymce-extension/.
+
+== Installation ==
+
+  
+  # Download master from git hub using git or tarball download:
+  
+  http://github.com/ginius/radiant_tinymce_filter/tree/master
+  
+  
+  # Copy tinymce with radiant_tags plugin to your /public directory by invoking
+
+  rake radiant:extensions:tinymce_filter:update
+
+== Settings ==
+
+If you want to change the settings of the editor, you can do this by editing the 'observe_mce.js' file. The 'radiant-tags' plugin is used to protect the Radiant tags from being destroyed by the editor.
+
+- Michael Varamashvili
+
+http://github.com/ginius
