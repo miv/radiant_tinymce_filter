@@ -1,4 +1,3 @@
-console.log("config loaded");
 var TinyMCEConfig = {
   // General options
   mode : "none",

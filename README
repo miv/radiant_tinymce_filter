@@ -10,7 +10,7 @@ It allows you to edit the content of your pages in the TinyMCE editor.
   
   # Download master from git hub using git or tarball download:
   
-  http://github.com/ginius/radiant_tinymce_filter/tree/master
+  git://github.com/miv/radiant_tinymce_filter/tree/master.git
   
   
   # Copy tinymce with radiant_tags plugin to your /public directory by invoking
