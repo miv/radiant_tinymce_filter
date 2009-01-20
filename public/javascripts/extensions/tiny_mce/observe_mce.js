@@ -1,15 +1,18 @@
 // most of this code is an ugly hack because tinyMCE did't work for me when i needed multiple instances of it on one page
+var current_observer
+
 
 tinyMCE.init(TinyMCEConfig);
 TabControl.prototype.select_callback = function(partIndex) {
+  current_observer=toggleEditor(partIndex);
+  Event.observe($('part_'+partIndex+'_filter_id'),'change', current_observer);
   instantiateMCEEditor(partIndex);
 }
 
 TabControl.prototype.before_select_callback = function(previouspage) {
-  Event.stopObserving($('part_'+previouspage+'_filter_id'),'change'); // just in case
-  Event.observe($('part_'+previouspage+'_filter_id'),'change',function(){
-    toggleEditor(previouspage)
-  });
+
+  if (current_observer) Event.stopObserving($('part_'+previouspage+'_filter_id'),'change', current_observer); // just in case
+  
 
   ed = tinyMCE.get('part_'+previouspage+'_content');
   if (ed) {
