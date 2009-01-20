@@ -3,7 +3,7 @@
 This extension provides a TinyMCE filter for the Radiant CMS. 
 It allows you to edit the content of your pages in the TinyMCE editor.
 
-Ispired by http://code.google.com/p/radiant-tinymce-extension/.
+
 
 == Installation ==
 
@@ -19,8 +19,20 @@ Ispired by http://code.google.com/p/radiant-tinymce-extension/.
 
 == Settings ==
 
-If you want to change the settings of the editor, you can do this by editing the 'observe_mce.js' file. The 'radiant-tags' plugin is used to protect the Radiant tags from being destroyed by the editor.
+If you want to change the settings of the editor, you can do this by editing the 'tiny_mce_settings.js' file in your /public/javascripts/extentions/tiny_mce folder. 
+
+The 'radiant_tags' plugin is used to protect the Radiant tags from being destroyed by the editor. It will not hide your <r:> tags, instead it will preserve it from being sanitazied.
+
+== A word of warning
+
+TinyMCE did't want to work when i tried to put multiple instances of it on one page, so now it is destroying every time you switch a tab. I don't feel any discomfort on my machine but still...
+
+I had to patch radiant TabControl javascript class to add callbacks before and after you switch tabs. Right now it's dead simple and cannot work with multiple callbacks. Also it has logic of 'select' method of TabControll class, so if after update of your radiant copy somthing affilated with tabs break, this filter is first place to look at (look at public\javascripts\extensions\tiny_mce\tiny_mce_radiant_tabcontrol_extension.js)
+
+== Inspiration
+
+ by many other tinymce filters
 
 - Michael Varamashvili
 
-http://github.com/ginius
+http://github.com/miv

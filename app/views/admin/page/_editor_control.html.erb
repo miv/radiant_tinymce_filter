@@ -1,9 +1,6 @@
 <%=
   javascript_tag("
-      Event.observe(window,'load', function() {
-          instantiateMCEEditor('#{page_part.name}')
-      });
-  
+      // observer if
       Event.observe($('part_#{page_part.name}_filter_id'),'change',function(){
           toggleEditor('#{page_part.name}')
       });

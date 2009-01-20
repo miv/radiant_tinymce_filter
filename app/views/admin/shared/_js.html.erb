@@ -1,0 +1,8 @@
+<% if RAILS_ENV == 'development' %>
+  <% include_javascript 'extensions/tiny_mce/tiny_mce_src' %>
+<% else  %>
+  <% include_javascript 'extensions/tiny_mce/tiny_mce' %>
+<% end  %>
+<% include_javascript 'extensions/tiny_mce/tiny_mce_settings' %>
+<% include_javascript 'extensions/tiny_mce/tiny_mce_radiant_tabcontrol_extension' %>
+<% include_javascript 'extensions/tiny_mce/observe_mce' %>
