@@ -2,6 +2,7 @@
 
 This extension provides a TinyMCE filter for the Radiant CMS. 
 It allows you to edit the content of your pages in the TinyMCE editor.
+We now have image uploading (mostly snatched from glorious Community Engine)! Thou a bit broken :)
 
 
 
@@ -22,6 +23,17 @@ It allows you to edit the content of your pages in the TinyMCE editor.
 If you want to change the settings of the editor, you can do this by editing the 'tiny_mce_settings.js' file in your /public/javascripts/extentions/tiny_mce folder. 
 
 The 'radiant_tags' plugin is used to protect the Radiant tags from being destroyed by the editor. It will not hide your <r:> tags, instead it will preserve it from being sanitazied.
+
+== Image uploading
+
+Image uploading uses paperclip, so you need to install it first. Also respond_to_parents plugin needed. If you already have some assets  processing (maybe on attachments_fu) then all you need to do is to:
+1) Patch photos model
+2) Patch javascript/extenstions/tiny_mce/plugins/curblyadvimage/image.html in line:
+  <input class="input-file" id="image_uploaded_data" name="photo[photo]" size="30" type="file"/>
+  you need to change name to whatever you want (photo[uploaded_data] in case of attachments_fu).
+3) Patch views in lines where it uses paperclip's photo.url(:thumb) on photo.public_filename
+4) Patch controller to do the same
+  
 
 == A word of warning
 

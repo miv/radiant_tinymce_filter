@@ -13,7 +13,7 @@ function select_thumb(element) {
 
 function upload_image_callback(url, alt_text, photo_id){
 	$('image_uploaded_data').clear();
-  new Ajax.Request("/admin/manage_photos?photo_id="+photo_id, {asynchronous:true, evalScripts:true, method:'get'});
+  new Ajax.Request("/manage_photos?photo_id="+photo_id, {asynchronous:true, evalScripts:true, method:'get'});
 }
 
 function curbly_insert_image(url, alt_text){
@@ -27,7 +27,7 @@ function formElement() {
 	return document.forms[1];
 	}
 function ts_onload(){
-	$('dynamic_images_list').update("Uploading...<br /><img src='/images/admin/spinner.gif'>");
+	$('dynamic_images_list').update("Uploading...<br /><img src='/plugin_assets/community_engine/images/spinner.gif'>");
 	mcTabs.displayTab('dynamic_select_tab','dynamic_select_panel');
 	
 	var iframe1=ts_ce('iframe','html_editor_image_upload_frame');
@@ -38,7 +38,6 @@ function ts_onload(){
 	iframe1.style.height="1px";
 	iframe1.style.visibility="hidden";
 	iframe1.setAttribute('id','html_editor_image_upload_frame');
-        console.log(iframe1);
 	$('image-upload').appendChild(iframe1);
 	$('image_upload_form').setAttribute("action", ts_upload_image_path());
 	}
@@ -46,7 +45,7 @@ function ts_onload(){
 	  // path_prefix = window.parent.location.pathname.split("/")[1];
 	  // to_path = "/" + path_prefix + "/photos.js";
 	  // to_path = "/manage_photos.js";	
-	  return '/admin/create_photo.js';
+	  return '/create_photo.js';
 	}
 function ts_ce(tag,name){
   if (name && window.ActiveXObject){

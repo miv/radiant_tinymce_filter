@@ -17,7 +17,7 @@
 					return;
 
 				ed.windowManager.open({
-					file : url + '/image.htm',
+					file : url + '/image.html',
 					width : 480 + parseInt(ed.getLang('curblyadvimage.delta_width', 0)),
 					height : 385 + parseInt(ed.getLang('curblyadvimage.delta_height', 0)),
 					inline : 1

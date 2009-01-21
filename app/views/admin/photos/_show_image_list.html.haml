@@ -1,0 +1,22 @@
+- unless photos.empty?
+  %ul.curblyadvimage_list
+    - photos.each do |p|
+      %li{:id => p.id}
+        .thumbs
+          = "вставить" + ":"
+          %br
+          %a{:href=>'#_thumb', :onclick=>"select_thumb(this);return false;"}
+            = "маленькое"
+          %a{:href=>'#_medium', :onclick=>"select_thumb(this);return false;"}
+            = "среднее"
+          %a{:href=>'#', :onclick=>"select_thumb(this);return false;"}
+            = "большое"
+          %br
+          %a{:href=>'#', :onclick=>"$(this).up('li').removeClassName('selected');return false;", :style => 'float:right; font-size: 10px;'}
+            = "отменить"
+        %a{:href=>'#', :onclick=>"select_image(this);return false;"}
+          = image_tag( p.photo.url(:thumb), :alt => p.photo_file_name )
+
+
+- else
+  = "Нет загруженный изображений"
