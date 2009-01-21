@@ -5,9 +5,9 @@ function select_image(element){
   }
 function select_thumb(element) {
 	element = $(element);
-	size = element.getAttribute('href').split('#')[1];
+	size = element.getAttribute('href').split('#_')[1];
 	img = element.up('li').removeClassName("selected").down('img');
-	src = img.src.gsub('_thumb.', size+'.');
+	src = img.src.gsub('thumb', size);
 	curbly_insert_image(src, img.getAttribute('alt') );
 }
 

@@ -16,11 +16,13 @@
   <div id="image-upload">
     <fieldset>
       <legend>Upload New Image</legend>
-      <form id='image_upload_form' enctype="multipart/form-data" method="post" onsubmit="ts_onload(); return true;" target="html_editor_image_upload_frame">
+      <form action='/admin/create_photo.js' id='image_upload_form' enctype="multipart/form-data" method="post" target="html_editor_image_upload_frame">
         <input class="input-file" id="image_uploaded_data" name="photo[photo]" size="30" type="file"/>
         <input class="submit" name="commit" type="submit" value="Upload"/>
       </form>
     </fieldset>
+    <iframe name="html_editor_image_upload_frame" src="about:blank" id="html_editor_image_upload_frame" style="border:0px none; position:absolute; width:1px; height:1px; visibility:hidden">
+    </iframe>
   </div>		  
 
   <br />

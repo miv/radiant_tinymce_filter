@@ -33,6 +33,7 @@ Image uploading uses paperclip, so you need to install it first. Also respond_to
   you need to change name to whatever you want (photo[uploaded_data] in case of attachments_fu).
 3) Patch views in lines where it uses paperclip's photo.url(:thumb) on photo.public_filename
 4) Patch controller to do the same
+5) Patch function select_thumb(element) (javascript/extenstions/tiny_mce/plugins/curblyadvimage/functions.js) to generate correct urls
   
 
 == A word of warning
