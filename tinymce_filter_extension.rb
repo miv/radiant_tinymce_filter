@@ -12,8 +12,8 @@ class TinymceFilterExtension < Radiant::Extension
     
     admin.page.edit.add :form, "/admin/shared/js"
     admin.snippet.edit.add :form, "/admin/shared/js"
-    admin.page.edit.add :part_controls, "/admin/page/editor_control"
-    admin.snippet.edit.add :part_controls, "/admin/page/editor_control"
+    #admin.page.edit.add :part_controls, "/admin/page/editor_control"
+    #admin.snippet.edit.add :form_top, "/admin/page/editor_control"
   end
   
   def deactivate
