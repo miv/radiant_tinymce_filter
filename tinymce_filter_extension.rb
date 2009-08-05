@@ -1,4 +1,8 @@
-require_dependency 'application'
+if Radiant::Version.to_s >= "0.8"
+  require_dependency 'application_controller'
+else
+  require_dependency 'application'
+end
 
 class TinymceFilterExtension < Radiant::Extension
   version "1.0"
